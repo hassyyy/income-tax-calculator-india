@@ -12,13 +12,55 @@
 </head>
 <body>
   <script src="app.js"></script>
-  <div class="center title">
-    Hey there
-  </div>
-  <div class="center">
-    <button type="button" class="btn btn-primary">
-      Coming Soon
-    </button>
-  </div>
+  <h1 class="display-4 center">Income Tax Calculator - India</h1>
+
+  <div class="container center-table">
+    <div class="row mt-3">
+      <div class="col">
+        <label class="col-form-label">CTC</label>
+      </div>
+      <div class="col">
+        <input type="number" id="ctc" class="form-control">
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col">
+        <label class="col-form-label">Employee PF</label>
+      </div>
+      <div class="col">
+        <input type="number" id="pf" class="form-control">
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col">
+        <label class="col-form-label">House Rent Allowance</label>
+      </div>
+      <div class="col">
+        <input type="number" id="hra" class="form-control">
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col">
+        <label class="col-form-label">Deductions under 80C</label>
+      </div>
+      <div class="col">
+        <input type="number" id="80c" class="form-control">
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col">
+        <label class="col-form-label">Other Deductions</label>
+      </div>
+      <div class="col">
+        <input type="number" id="others" class="form-control">
+      </div>
+    </div>
+
+    <div class="center">
+      <button type="submit" class="btn btn-primary mt-3 px-5">Submit</button>
+    </div>
+
+  </form>
+
 </body>
 </html>
