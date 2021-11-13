@@ -8,7 +8,26 @@ input[type='text'] {
   text-align: center;
 }
 
-.center-table {
+#form-table {
   margin: auto;
   width: 30%;
+}
+
+#result-table {
+  display: none;
+  text-align: center;
+}
+
+#result-table .col-md-4 {
+  border: 0.5px solid;
+  border-radius: 5px;
+}
+
+.table-title {
+  background: coral;
+  border-radius: 5px;
+}
+
+.table-header {
+  font-weight: 2;
 }
