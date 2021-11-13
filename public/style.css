@@ -4,6 +4,10 @@
   width: 50%;
 }
 
+input[type='text'] {
+  text-align: center;
+}
+
 .center-table {
   margin: auto;
   width: 30%;
