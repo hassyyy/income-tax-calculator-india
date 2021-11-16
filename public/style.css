@@ -4,6 +4,10 @@
   width: 50%;
 }
 
+.hide {
+  display: none;
+}
+
 input[type='text'] {
   text-align: center;
 }
@@ -13,9 +17,26 @@ input[type='text'] {
   width: 30%;
 }
 
+#result {
+  width: fit-content;
+  font-size: larger;
+  margin-top: 50px;
+  border-radius: 50px;
+}
+
 #result-table {
-  display: none;
   text-align: center;
+}
+
+#result-table .container {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.best-regime {
+  border: 2px solid;
+  border-radius: 5px;
+  border-color: green;
 }
 
 #result-table .col-md-4 {
