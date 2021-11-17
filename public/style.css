@@ -38,12 +38,6 @@ input[type='text'] {
   padding-bottom: 10px;
 }
 
-.best-regime {
-  border: 2px solid;
-  border-radius: 5px;
-  border-color: green;
-}
-
 #result-table .col-md-4 {
   border: 0.5px solid;
   border-radius: 5px;

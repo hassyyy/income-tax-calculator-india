@@ -44,15 +44,11 @@ function displayResult() {
   $('#new-take-home-monthly').text(AutoNumeric.format(Math.round(newTakeHome/12), CURRENCY_OPTIONS));
 
   if(oldTakeHome > newTakeHome) {
-    $('#old-regime').addClass('best-regime');
-    $('#new-regime').removeClass('best-regime');
     $('#old-regime-check').css('visibility','visible');
     $('#new-regime-check').css('visibility','hidden');
     takeHomeDifference = AutoNumeric.format(Math.round((oldTakeHome - newTakeHome)/12), CURRENCY_OPTIONS)
     $('#result').text(`Old regime is better than New regime by ${takeHomeDifference} per month`);
   } else {
-    $('#old-regime').removeClass('best-regime');
-    $('#new-regime').addClass('best-regime');
     $('#old-regime-check').css('visibility','hidden');
     $('#new-regime-check').css('visibility','visible');
     takeHomeDifference = AutoNumeric.format(Math.round((newTakeHome - oldTakeHome)/12), CURRENCY_OPTIONS)
