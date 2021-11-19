@@ -38,16 +38,45 @@ input[type='text'] {
   padding-bottom: 10px;
 }
 
-#result-table .col-md-4 {
-  border: 0.5px solid;
-  border-radius: 5px;
-}
-
 .table-title {
   background: coral;
   border-radius: 5px;
 }
 
 .table-header {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 15px;
+  margin-bottom: 10px;
   font-weight: 2;
+}
+
+.table-header .badge {
+  font-size: 15px;
+}
+
+.table-header .col-md-4 {
+  font-weight: 2;
+}
+
+.col-md-3 .badge {
+  margin-left: -50px;
+}
+
+.accordion-button {
+  display: block;
+}
+
+.accordion-button:not(.collapsed) div.arrow {
+  transform: rotate(90deg);
+  margin-left: -5px;
+  margin-bottom: -5px;
+}
+
+.accordion-header {
+  line-height: 1.5;
+}
+
+.row .col-md-4 {
+  text-align: center;
 }
