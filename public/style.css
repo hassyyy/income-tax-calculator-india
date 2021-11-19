@@ -69,10 +69,12 @@ input[type='text'] {
   display: block;
 }
 
+.arrow {
+  text-align: center;
+}
+
 .accordion-button:not(.collapsed) div.arrow {
-  transform: rotate(90deg);
-  margin-left: -0.313rem;
-  margin-bottom: -0.313rem;
+  transform: rotate(180deg);
 }
 
 .accordion-header {
