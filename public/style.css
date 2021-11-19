@@ -71,6 +71,8 @@ input[type='text'] {
 
 .arrow {
   text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .accordion-button:not(.collapsed) div.arrow {
