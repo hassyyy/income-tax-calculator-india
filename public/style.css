@@ -41,6 +41,8 @@ input[type='text'] {
 .table-title {
   background: coral;
   border-radius: 0.313rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .table-header {
