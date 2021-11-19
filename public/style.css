@@ -20,8 +20,8 @@ input[type='text'] {
 #result {
   width: fit-content;
   font-size: larger;
-  margin-top: 50px;
-  border-radius: 50px;
+  margin-top: 3.125rem;
+  border-radius: 3.125rem;
 }
 
 .bi-patch-check-fill {
@@ -34,25 +34,25 @@ input[type='text'] {
 }
 
 #result-table .container {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
 }
 
 .table-title {
   background: coral;
-  border-radius: 5px;
+  border-radius: 0.313rem;
 }
 
 .table-header {
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-top: 15px;
-  margin-bottom: 10px;
+  margin-left: 0.625rem;
+  margin-right: 0.625rem;
+  margin-top: 0.938rem;
+  margin-bottom: 0.625rem;
   font-weight: 2;
 }
 
 .table-header .badge {
-  font-size: 15px;
+  font-size: 0.938rem;
 }
 
 .table-header .col-md-4 {
@@ -60,7 +60,7 @@ input[type='text'] {
 }
 
 .col-md-3 .badge {
-  margin-left: -50px;
+  margin-left: -3.125rem;
 }
 
 .accordion-button {
@@ -69,8 +69,8 @@ input[type='text'] {
 
 .accordion-button:not(.collapsed) div.arrow {
   transform: rotate(90deg);
-  margin-left: -5px;
-  margin-bottom: -5px;
+  margin-left: -0.313rem;
+  margin-bottom: -0.313rem;
 }
 
 .accordion-header {
