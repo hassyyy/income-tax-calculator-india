@@ -24,34 +24,35 @@ function displayResult() {
 
   oldTaxableIncome = income - pf - hra - deductions - EMPLOYER_PF - PROFESSIONAL_TAX - CONVEYANCE;
   newTaxableIncome = income - EMPLOYER_PF;
-  $('#old-taxable-income-annual').text(AutoNumeric.format(oldTaxableIncome, CURRENCY_OPTIONS));
-  $('#old-taxable-income-monthly').text(AutoNumeric.format(Math.round(oldTaxableIncome/12), CURRENCY_OPTIONS));
-  $('#new-taxable-income-annual').text(AutoNumeric.format(newTaxableIncome, CURRENCY_OPTIONS));
-  $('#new-taxable-income-monthly').text(AutoNumeric.format(Math.round(newTaxableIncome/12), CURRENCY_OPTIONS));
+  $('#old-taxable-income-annual').text(formatCurrency(oldTaxableIncome));
+  $('#old-taxable-income-monthly').text(formatCurrencyMonthly(oldTaxableIncome));
+  $('#new-taxable-income-annual').text(formatCurrency(newTaxableIncome));
+  $('#new-taxable-income-monthly').text(formatCurrencyMonthly(newTaxableIncome));
+
 
   oldTax = calculateTax(oldTaxableIncome, true);
   newTax = calculateTax(newTaxableIncome);
-  $('#old-tax-annual').text(AutoNumeric.format(oldTax, CURRENCY_OPTIONS));
-  $('#old-tax-monthly').text(AutoNumeric.format(Math.round(oldTax/12), CURRENCY_OPTIONS));
-  $('#new-tax-annual').text(AutoNumeric.format(newTax, CURRENCY_OPTIONS));
-  $('#new-tax-monthly').text(AutoNumeric.format(Math.round(newTax/12), CURRENCY_OPTIONS));
+  $('#old-tax-annual').text(formatCurrency(oldTax));
+  $('#old-tax-monthly').text(formatCurrencyMonthly(oldTax));
+  $('#new-tax-annual').text(formatCurrency(newTax));
+  $('#new-tax-monthly').text(formatCurrencyMonthly(newTax));
 
   oldTakeHome = Math.round(income - pf - EMPLOYER_PF - PROFESSIONAL_TAX - (oldTax * 1.04));
   newTakeHome = Math.round(income - pf - EMPLOYER_PF - PROFESSIONAL_TAX - (newTax * 1.04));
-  $('#old-take-home-annual').text(AutoNumeric.format(oldTakeHome, CURRENCY_OPTIONS));
-  $('#old-take-home-monthly').text(AutoNumeric.format(Math.round(oldTakeHome/12), CURRENCY_OPTIONS));
-  $('#new-take-home-annual').text(AutoNumeric.format(newTakeHome, CURRENCY_OPTIONS));
-  $('#new-take-home-monthly').text(AutoNumeric.format(Math.round(newTakeHome/12), CURRENCY_OPTIONS));
+  $('#old-take-home-annual').text(formatCurrency(oldTakeHome));
+  $('#old-take-home-monthly').text(formatCurrencyMonthly(oldTakeHome));
+  $('#new-take-home-annual').text(formatCurrency(newTakeHome));
+  $('#new-take-home-monthly').text(formatCurrencyMonthly(newTakeHome));
 
   if(oldTakeHome > newTakeHome) {
     $('#old-regime-check').css('visibility','visible');
     $('#new-regime-check').css('visibility','hidden');
-    takeHomeDifference = AutoNumeric.format(Math.round((oldTakeHome - newTakeHome)/12), CURRENCY_OPTIONS)
+    takeHomeDifference = formatCurrencyMonthly((oldTakeHome - newTakeHome))
     $('#result').text(`Old regime is better than New regime by ${takeHomeDifference} per month`);
   } else {
     $('#old-regime-check').css('visibility','hidden');
     $('#new-regime-check').css('visibility','visible');
-    takeHomeDifference = AutoNumeric.format(Math.round((newTakeHome - oldTakeHome)/12), CURRENCY_OPTIONS)
+    takeHomeDifference = formatCurrencyMonthly((newTakeHome - oldTakeHome))
     $('#result').text(`New regime is better than Old regime by ${takeHomeDifference} per month`);
   }
 }
@@ -69,4 +70,12 @@ function calculateTax(taxableIncome, old = false) {
             (Math.max(Math.min(taxableIncome-1250000, 250000), 0) * 0.25) +
             (Math.max(taxableIncome-1500000, 0) * 0.30)
   }
+}
+
+function formatCurrency(value) {
+  return AutoNumeric.format(value, CURRENCY_OPTIONS)
+}
+
+function formatCurrencyMonthly(value) {
+  return AutoNumeric.format(Math.round(value/12), CURRENCY_OPTIONS)
 }
