@@ -20,7 +20,8 @@ function displayResult() {
   income = AutoNumeric.getNumber('#ctc');
   pf = AutoNumeric.getNumber('#pf');
   hra = AutoNumeric.getNumber('#hra');
-  deductions_80c = Math.min(150000, AutoNumeric.getNumber('#pf') + pf);
+  deductions_80c = Math.min(150000, AutoNumeric.getNumber('#deductions-80c') + pf);
+  console.log(deductions_80c);
   deductions = deductions_80c + AutoNumeric.getNumber('#deductions-others');
 
   oldTaxableIncome = income - hra - deductions - EMPLOYER_PF - PROFESSIONAL_TAX - CONVEYANCE;
