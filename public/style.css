@@ -8,6 +8,14 @@
   visibility: hidden;
 }
 
+#note {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 2rem;
+  width: 26rem;
+  font-size: smaller;
+}
+
 input[type='text'] {
   text-align: center;
 }
