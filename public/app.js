@@ -62,12 +62,42 @@ function displayResult() {
   $('#new-tax-annual').text(formatCurrency(newTax));
   $('#new-tax-monthly').text(formatCurrencyMonthly(newTax));
 
-  oldTakeHome = Math.round(income - pf - EMPLOYER_PF - PROFESSIONAL_TAX - (oldTax * 1.04));
-  newTakeHome = Math.round(income - pf - EMPLOYER_PF - PROFESSIONAL_TAX - (newTax * 1.04));
+  oldTaxCess = oldTax * 0.04;
+  newTaxCess = newTax * 0.04;
+  oldTakeHome = Math.round(income - pf - EMPLOYER_PF - PROFESSIONAL_TAX - oldTax - oldTaxCess);
+  newTakeHome = Math.round(income - pf - EMPLOYER_PF - PROFESSIONAL_TAX - newTax - newTaxCess);
   $('#old-take-home-annual').text(formatCurrency(oldTakeHome));
   $('#old-take-home-monthly').text(formatCurrencyMonthly(oldTakeHome));
   $('#new-take-home-annual').text(formatCurrency(newTakeHome));
   $('#new-take-home-monthly').text(formatCurrencyMonthly(newTakeHome));
+
+  // Old Regime - Take Home Breakup
+  $('#or-home-total-income-annual').text(formatCurrency(income));
+  $('#or-home-total-income-monthly').text(formatCurrencyMonthly(income));
+  $('#or-home-employee-pf-annual').text(formatCurrency(pf));
+  $('#or-home-employee-pf-monthly').text(formatCurrencyMonthly(pf));
+  $('#or-home-employer-pf-annual').text(formatCurrency(EMPLOYER_PF));
+  $('#or-home-employer-pf-monthly').text(formatCurrencyMonthly(EMPLOYER_PF));
+  $('#or-home-professional-tax-annual').text(formatCurrency(PROFESSIONAL_TAX));
+  $('#or-home-professional-tax-monthly').text(formatCurrencyMonthly(PROFESSIONAL_TAX));
+  $('#or-home-income-tax-annual').text(formatCurrency(oldTax));
+  $('#or-home-income-tax-monthly').text(formatCurrencyMonthly(oldTax));
+  $('#or-home-cess-annual').text(formatCurrency(oldTaxCess));
+  $('#or-home-cess-monthly').text(formatCurrencyMonthly(oldTaxCess));
+
+  // New Regime - Take Home Breakup
+  $('#nr-home-total-income-annual').text(formatCurrency(income));
+  $('#nr-home-total-income-monthly').text(formatCurrencyMonthly(income));
+  $('#nr-home-employee-pf-annual').text(formatCurrency(pf));
+  $('#nr-home-employee-pf-monthly').text(formatCurrencyMonthly(pf));
+  $('#nr-home-employer-pf-annual').text(formatCurrency(EMPLOYER_PF));
+  $('#nr-home-employer-pf-monthly').text(formatCurrencyMonthly(EMPLOYER_PF));
+  $('#nr-home-professional-tax-annual').text(formatCurrency(PROFESSIONAL_TAX));
+  $('#nr-home-professional-tax-monthly').text(formatCurrencyMonthly(PROFESSIONAL_TAX));
+  $('#nr-home-income-tax-annual').text(formatCurrency(newTax));
+  $('#nr-home-income-tax-monthly').text(formatCurrencyMonthly(newTax));
+  $('#nr-home-cess-annual').text(formatCurrency(newTaxCess));
+  $('#nr-home-cess-monthly').text(formatCurrencyMonthly(newTaxCess));
 
   if(oldTakeHome > newTakeHome) {
     $('#old-regime-check').css('visibility','visible');
@@ -139,7 +169,7 @@ function calculateTax(taxableIncome, old = false) {
 }
 
 function formatCurrency(value) {
-  return AutoNumeric.format(value, CURRENCY_OPTIONS)
+  return AutoNumeric.format(Math.round(value), CURRENCY_OPTIONS)
 }
 
 function formatCurrencyMonthly(value) {
