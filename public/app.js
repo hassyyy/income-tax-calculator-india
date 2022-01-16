@@ -20,9 +20,10 @@ function displayResult() {
   income = AutoNumeric.getNumber('#ctc');
   pf = AutoNumeric.getNumber('#pf');
   hra = AutoNumeric.getNumber('#hra');
-  deductions = AutoNumeric.getNumber('#deductions-80c') + AutoNumeric.getNumber('#deductions-others');
+  deductions_80c = Math.min(150000, AutoNumeric.getNumber('#pf') + pf);
+  deductions = deductions_80c + AutoNumeric.getNumber('#deductions-others');
 
-  oldTaxableIncome = income - pf - hra - deductions - EMPLOYER_PF - PROFESSIONAL_TAX - CONVEYANCE;
+  oldTaxableIncome = income - hra - deductions - EMPLOYER_PF - PROFESSIONAL_TAX - CONVEYANCE;
   newTaxableIncome = income - EMPLOYER_PF;
   $('#old-taxable-income-annual').text(formatCurrency(oldTaxableIncome));
   $('#old-taxable-income-monthly').text(formatCurrencyMonthly(oldTaxableIncome));
