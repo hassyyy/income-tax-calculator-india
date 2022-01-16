@@ -20,9 +20,9 @@ function displayResult() {
   income = AutoNumeric.getNumber('#ctc');
   pf = AutoNumeric.getNumber('#pf');
   hra = AutoNumeric.getNumber('#hra');
-  otherDeductions = AutoNumeric.getNumber('#deductions-80c');
-  deductions_80c = Math.min(150000, otherDeductions + pf);
-  deductions = deductions_80c + AutoNumeric.getNumber('#deductions-others');
+  otherDeductions = AutoNumeric.getNumber('#deductions-others');
+  deductions_80c = Math.min(150000, AutoNumeric.getNumber('#deductions-80c') + pf);
+  deductions = deductions_80c + otherDeductions;
 
   oldTaxableIncome = income - hra - deductions - EMPLOYER_PF - PROFESSIONAL_TAX - STANDARD_DEDUCTION;
   newTaxableIncome = income - EMPLOYER_PF;
