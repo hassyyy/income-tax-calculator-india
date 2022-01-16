@@ -4,7 +4,7 @@ EMPLOYER_PF = 21600;
 PROFESSIONAL_TAX = 2500;
 STANDARD_DEDUCTION = 50000;
 
-inputElements = ['#ctc', '#pf', "#hra", '#deductions-80c', '#deductions-others']
+inputElements = ['#total-income', '#pf', "#hra", '#deductions-80c', '#deductions-others']
 CURRENCY_OPTIONS = {
   currencySymbol : '₹',
   digitalGroupSpacing: '2',
@@ -17,7 +17,7 @@ function displayResult() {
   $('#result').css('visibility','visible');
   $('#result-table').css('visibility','visible');
 
-  income = AutoNumeric.getNumber('#ctc');
+  income = AutoNumeric.getNumber('#total-income');
   pf = AutoNumeric.getNumber('#pf');
   hra = AutoNumeric.getNumber('#hra');
   otherDeductions = AutoNumeric.getNumber('#deductions-others');
