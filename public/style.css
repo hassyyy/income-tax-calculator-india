@@ -100,8 +100,7 @@ input[type='text'] {
   line-height: 1.5;
 }
 
-.row .col-md-4,
-.row .col-md-3 {
+.row div {
   text-align: center;
 }
 
@@ -117,4 +116,13 @@ div.row:not(.table-header) > .col-md-3 {
 
 .bi-dash-circle {
   color: red;
+}
+
+.bi-plus-circle {
+  color: green;
+}
+
+.row.title {
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
