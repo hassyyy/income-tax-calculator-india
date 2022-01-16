@@ -108,3 +108,13 @@ input[type='text'] {
 div.row:not(.table-header) > .col-md-3 {
   margin-left: -1rem;
 }
+
+.accordion-body {
+  border: 0.25rem solid #86b7fe;
+  border-radius: 1rem;
+  margin: 1rem auto;
+}
+
+.bi-dash-circle {
+  color: red;
+}

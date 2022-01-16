@@ -78,7 +78,7 @@
               Old Regime
             </div>
           </div>
-          <div class="accordion" id="accordionExample">
+          <div class="accordion" id="or-accordion">
             <div class='acc-item'>
               <h2 class="accordion-header" id="headingZero">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false">
@@ -117,8 +117,91 @@
                   </div>
                 </button>
               </h2>
-              <div id="old-taxable-income-breakup" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div id="old-taxable-income-breakup" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#or-accordion">
                 <div class="accordion-body">
+                  <div class="row">
+                    <div class="col-md-1">
+                    </div>
+                    <div class="col-md-4">
+                      Total Income
+                    </div>
+                    <div class="col-md-4" id='total-income-annual'>
+                    </div>
+                    <div class="col-md-3" id='total-income-monthly'>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-1">
+                      <i class="bi bi-dash-circle"></i>
+                    </div>
+                    <div class="col-md-4">
+                      Employer PF
+                    </div>
+                    <div class="col-md-4" id='employer-pf-annual'>
+                    </div>
+                    <div class="col-md-3" id='employer-pf-monthly'>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-1">
+                      <i class="bi bi-dash-circle"></i>
+                    </div>
+                    <div class="col-md-4">
+                      House Rent Allowance
+                    </div>
+                    <div class="col-md-4" id='hra-annual'>
+                    </div>
+                    <div class="col-md-3" id='hra-monthly'>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-1">
+                      <i class="bi bi-dash-circle"></i>
+                    </div>
+                    <div class="col-md-4">
+                      Deductions under 80c
+                    </div>
+                    <div class="col-md-4" id='deductions-80c-annual'>
+                    </div>
+                    <div class="col-md-3" id='deductions-80c-monthly'>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-1">
+                      <i class="bi bi-dash-circle"></i>
+                    </div>
+                    <div class="col-md-4">
+                      Standard Deductions
+                    </div>
+                    <div class="col-md-4" id='standard-deductions-annual'>
+                    </div>
+                    <div class="col-md-3" id='standard-deductions-monthly'>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-1">
+                      <i class="bi bi-dash-circle"></i>
+                    </div>
+                    <div class="col-md-4">
+                      Other Deductions
+                    </div>
+                    <div class="col-md-4" id='other-deductions-annual'>
+                    </div>
+                    <div class="col-md-3" id='other-deductions-monthly'>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-1">
+                      <i class="bi bi-dash-circle"></i>
+                    </div>
+                    <div class="col-md-4">
+                      Professional Tax
+                    </div>
+                    <div class="col-md-4" id='professional-tax-annual'>
+                    </div>
+                    <div class="col-md-3" id='professional-tax-monthly'>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -141,7 +224,7 @@
                   </div>
                 </button>
               </h2>
-              <div id="old-tax-breakup" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+              <div id="old-tax-breakup" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#or-accordion">
                 <div class="accordion-body">
                 </div>
               </div>
@@ -165,7 +248,7 @@
                   </div>
                 </button>
               </h2>
-              <div id="old-take-home-breakup" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+              <div id="old-take-home-breakup" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#or-accordion">
                 <div class="accordion-body">
                 </div>
               </div>
@@ -181,7 +264,7 @@
               New Regime
             </div>
           </div>
-          <div class="accordion" id="accordionExample">
+          <div class="accordion" id="nr-accordion">
             <div class='acc-item'>
               <h2 class="accordion-header" id="headingZero">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false">
@@ -220,20 +303,29 @@
                   </div>
                 </button>
               </h2>
-              <div id="new-taxable-income-breakup" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div id="new-taxable-income-breakup" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#nr-accordion">
                 <div class="accordion-body">
                   <div class="row">
                     <div class="col-md-1">
-                      -
                     </div>
                     <div class="col-md-4">
                       Total Income
                     </div>
-                    <div class="col-md-4">
-                      (minus)
+                    <div class="col-md-4" id='nr-total-income-annual'>
                     </div>
-                    <div class="col-md-3">
-                      (minus)
+                    <div class="col-md-3" id='nr-total-income-monthly'>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-1">
+                      <i class="bi bi-dash-circle"></i>
+                    </div>
+                    <div class="col-md-4">
+                      Employer PF
+                    </div>
+                    <div class="col-md-4" id='nr-employer-pf-annual'>
+                    </div>
+                    <div class="col-md-3" id='nr-employer-pf-monthly'>
                     </div>
                   </div>
                 </div>
@@ -258,7 +350,7 @@
                   </div>
                 </button>
               </h2>
-              <div id="new-tax-breakup" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+              <div id="new-tax-breakup" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#nr-accordion">
                 <div class="accordion-body">
                 </div>
               </div>
@@ -282,7 +374,7 @@
                   </div>
                 </button>
               </h2>
-              <div id="new-take-home-breakup" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+              <div id="new-take-home-breakup" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#nr-accordion">
                 <div class="accordion-body">
                 </div>
               </div>

@@ -2,7 +2,7 @@ console.log("App JS");
 
 EMPLOYER_PF = 21600;
 PROFESSIONAL_TAX = 2500;
-CONVEYANCE = 50000;
+STANDARD_DEDUCTION = 50000;
 
 inputElements = ['#ctc', '#pf', "#hra", '#deductions-80c', '#deductions-others']
 CURRENCY_OPTIONS = {
@@ -20,17 +20,40 @@ function displayResult() {
   income = AutoNumeric.getNumber('#ctc');
   pf = AutoNumeric.getNumber('#pf');
   hra = AutoNumeric.getNumber('#hra');
-  deductions_80c = Math.min(150000, AutoNumeric.getNumber('#deductions-80c') + pf);
-  console.log(deductions_80c);
+  otherDeductions = AutoNumeric.getNumber('#deductions-80c');
+  deductions_80c = Math.min(150000, otherDeductions + pf);
   deductions = deductions_80c + AutoNumeric.getNumber('#deductions-others');
 
-  oldTaxableIncome = income - hra - deductions - EMPLOYER_PF - PROFESSIONAL_TAX - CONVEYANCE;
+  oldTaxableIncome = income - hra - deductions - EMPLOYER_PF - PROFESSIONAL_TAX - STANDARD_DEDUCTION;
   newTaxableIncome = income - EMPLOYER_PF;
+
+  // Taxable Income
   $('#old-taxable-income-annual').text(formatCurrency(oldTaxableIncome));
   $('#old-taxable-income-monthly').text(formatCurrencyMonthly(oldTaxableIncome));
   $('#new-taxable-income-annual').text(formatCurrency(newTaxableIncome));
   $('#new-taxable-income-monthly').text(formatCurrencyMonthly(newTaxableIncome));
 
+  // Old Regime - Taxable Income Breakup
+  $('#total-income-annual').text(formatCurrency(income));
+  $('#total-income-monthly').text(formatCurrencyMonthly(income));
+  $('#employer-pf-annual').text(formatCurrency(EMPLOYER_PF));
+  $('#employer-pf-monthly').text(formatCurrencyMonthly(EMPLOYER_PF));
+  $('#hra-annual').text(formatCurrency(hra));
+  $('#hra-monthly').text(formatCurrencyMonthly(hra));
+  $('#deductions-80c-annual').text(formatCurrency(deductions_80c));
+  $('#deductions-80c-monthly').text(formatCurrencyMonthly(deductions_80c));
+  $('#standard-deductions-annual').text(formatCurrency(STANDARD_DEDUCTION));
+  $('#standard-deductions-monthly').text(formatCurrencyMonthly(STANDARD_DEDUCTION));
+  $('#other-deductions-annual').text(formatCurrency(otherDeductions));
+  $('#other-deductions-monthly').text(formatCurrencyMonthly(otherDeductions));
+  $('#professional-tax-annual').text(formatCurrency(PROFESSIONAL_TAX));
+  $('#professional-tax-monthly').text(formatCurrencyMonthly(PROFESSIONAL_TAX));
+
+  // New Regime - Taxable Income Breakup
+  $('#nr-total-income-annual').text(formatCurrency(income));
+  $('#nr-total-income-monthly').text(formatCurrencyMonthly(income));
+  $('#nr-employer-pf-annual').text(formatCurrency(EMPLOYER_PF));
+  $('#nr-employer-pf-monthly').text(formatCurrencyMonthly(EMPLOYER_PF));
 
   oldTax = calculateTax(oldTaxableIncome, true);
   newTax = calculateTax(newTaxableIncome);
