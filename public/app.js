@@ -2,9 +2,9 @@ console.log("App JS");
 
 EMPLOYER_PF = 21600;
 PROFESSIONAL_TAX = 2500;
-STANDARD_DEDUCTION = 50000;
+STANDARD_EXEMPTION = 50000;
 
-inputElements = ['#total-income', '#pf', "#hra", '#deductions-80c', '#deductions-others']
+inputElements = ['#total-income', '#pf', "#hra", '#exemptions-80c', '#exemptions-others']
 CURRENCY_OPTIONS = {
   currencySymbol : '₹',
   digitalGroupSpacing: '2',
@@ -20,11 +20,11 @@ function displayResult() {
   income = AutoNumeric.getNumber('#total-income');
   pf = AutoNumeric.getNumber('#pf');
   hra = AutoNumeric.getNumber('#hra');
-  otherDeductions = AutoNumeric.getNumber('#deductions-others');
-  deductions_80c = Math.min(150000, AutoNumeric.getNumber('#deductions-80c') + pf);
-  deductions = deductions_80c + otherDeductions;
+  otherExemptions = AutoNumeric.getNumber('#exemptions-others');
+  exemptions_80c = Math.min(150000, AutoNumeric.getNumber('#exemptions-80c') + pf);
+  exemptions = exemptions_80c + otherExemptions;
 
-  oldTaxableIncome = income - hra - deductions - EMPLOYER_PF - PROFESSIONAL_TAX - STANDARD_DEDUCTION;
+  oldTaxableIncome = income - hra - exemptions - EMPLOYER_PF - PROFESSIONAL_TAX - STANDARD_EXEMPTION;
   newTaxableIncome = income - EMPLOYER_PF;
 
   // Taxable Income
@@ -40,12 +40,12 @@ function displayResult() {
   $('#employer-pf-monthly').text(formatCurrencyMonthly(EMPLOYER_PF));
   $('#hra-annual').text(formatCurrency(hra));
   $('#hra-monthly').text(formatCurrencyMonthly(hra));
-  $('#deductions-80c-annual').text(formatCurrency(deductions_80c));
-  $('#deductions-80c-monthly').text(formatCurrencyMonthly(deductions_80c));
-  $('#standard-deductions-annual').text(formatCurrency(STANDARD_DEDUCTION));
-  $('#standard-deductions-monthly').text(formatCurrencyMonthly(STANDARD_DEDUCTION));
-  $('#other-deductions-annual').text(formatCurrency(otherDeductions));
-  $('#other-deductions-monthly').text(formatCurrencyMonthly(otherDeductions));
+  $('#exemptions-80c-annual').text(formatCurrency(exemptions_80c));
+  $('#exemptions-80c-monthly').text(formatCurrencyMonthly(exemptions_80c));
+  $('#standard-exemptions-annual').text(formatCurrency(STANDARD_EXEMPTION));
+  $('#standard-exemptions-monthly').text(formatCurrencyMonthly(STANDARD_EXEMPTION));
+  $('#other-exemptions-annual').text(formatCurrency(otherExemptions));
+  $('#other-exemptions-monthly').text(formatCurrencyMonthly(otherExemptions));
   $('#professional-tax-annual').text(formatCurrency(PROFESSIONAL_TAX));
   $('#professional-tax-monthly').text(formatCurrencyMonthly(PROFESSIONAL_TAX));
 
