@@ -11,7 +11,7 @@
   <script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
 </head>
 <body>
-  <h1 class="display-4 center">Income Tax Calculator - India</h1>
+  <h1 class="display-4 center" id='title'>Income Tax Calculator - India</h1>
 
   <div class="container-fluid" id='form-table'>
     <div class="row mt-2">
@@ -58,10 +58,10 @@
     <div class="center">
       <button type="submit" class="btn btn-primary mt-2 px-5" onclick="displayResult()">Submit</button>
     </div>
+  </div>
 
-    <div class="alert alert-info center" role="alert" id='note'>
-      <b>Note</b> <br> Standard Deductions(Rs. 50,000), Employer PF(Rs. 21,600), Professional Tax(Rs. 2500) and CESS(4% of income tax) are included automatically
-    </div>
+  <div class="alert alert-info center" role="alert" id='note'>
+    <b>Note</b> <br> Standard Deductions(Rs. 50,000), Employer PF(Rs. 21,600), Professional Tax(Rs. 2500) and CESS(4% of income tax) are included automatically
   </div>
 
   <div class="alert alert-success hide center px-4" role="alert" id='result'>
@@ -114,7 +114,6 @@
               </h2>
               <div id="old-taxable-income-breakup" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                  <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
                 </div>
               </div>
             </div>
@@ -139,7 +138,6 @@
               </h2>
               <div id="old-tax-breakup" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                  <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
                 </div>
               </div>
             </div>
@@ -164,7 +162,6 @@
               </h2>
               <div id="old-take-home-breakup" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                  <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
                 </div>
               </div>
             </div>
@@ -215,7 +212,22 @@
               </h2>
               <div id="new-taxable-income-breakup" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                  <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-md-1">
+                        -
+                      </div>
+                      <div class="col-md-4">
+                        Total Income
+                      </div>
+                      <div class="col-md-4">
+                        (minus)
+                      </div>
+                      <div class="col-md-3">
+                        (minus)
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -240,7 +252,6 @@
               </h2>
               <div id="new-tax-breakup" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                  <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
                 </div>
               </div>
             </div>
@@ -265,7 +276,6 @@
               </h2>
               <div id="new-take-home-breakup" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                  <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
                 </div>
               </div>
             </div>
