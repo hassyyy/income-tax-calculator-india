@@ -74,8 +74,12 @@ input[type='text'] {
   font-weight: 2;
 }
 
-.col-md-3 .badge {
-  margin-left: -5rem;
+.table-header > div:nth-child(2) {
+  margin-left: -1rem;
+}
+
+.table-header > div:nth-child(3){
+  margin-left: 1rem;
 }
 
 .accordion-button {
@@ -96,14 +100,11 @@ input[type='text'] {
   line-height: 1.5;
 }
 
-.accordion-body {
-  padding: 1rem 0rem;
-}
-
-.accordion-body .col-md-3 {
-  margin-left: -2.5rem;
-}
-
-.row .col-md-4 {
+.row .col-md-4,
+.row .col-md-3 {
   text-align: center;
+}
+
+div.row:not(.table-header) > .col-md-3 {
+  margin-left: -1rem;
 }
