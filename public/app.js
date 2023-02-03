@@ -42,8 +42,8 @@ function displayResult() {
   $('#hra-monthly').text(formatCurrencyMonthly(hra));
   $('#exemptions-80c-annual').text(formatCurrency(exemptions_80c));
   $('#exemptions-80c-monthly').text(formatCurrencyMonthly(exemptions_80c));
-  $('#standard-exemptions-annual').text(formatCurrency(STANDARD_EXEMPTION));
-  $('#standard-exemptions-monthly').text(formatCurrencyMonthly(STANDARD_EXEMPTION));
+  $('#standard-exemption-annual').text(formatCurrency(STANDARD_EXEMPTION));
+  $('#standard-exemption-monthly').text(formatCurrencyMonthly(STANDARD_EXEMPTION));
   $('#other-exemptions-annual').text(formatCurrency(otherExemptions));
   $('#other-exemptions-monthly').text(formatCurrencyMonthly(otherExemptions));
   $('#professional-tax-annual').text(formatCurrency(PROFESSIONAL_TAX));
