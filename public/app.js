@@ -3,6 +3,10 @@ console.log("App JS");
 EMPLOYER_PF = 21600;
 PROFESSIONAL_TAX = 2500;
 STANDARD_EXEMPTION = 50000;
+TAX_REBATE = {
+  old: 500000,
+  new: 700000
+}
 
 inputElements = ['#total-income', '#pf', "#hra", '#exemptions-80c', '#exemptions-others']
 CURRENCY_OPTIONS = {
@@ -116,6 +120,9 @@ function displayResult() {
 
 function calculateTax(taxableIncome, old = false) {
   if(old) {
+    if(taxableIncome < TAX_REBATE['old']) {
+      taxableIncome = 0
+    }
     slab1Income = Math.min(taxableIncome, 250000);
     slab1Tax = 0;
     slab2Income = Math.max(Math.min(taxableIncome-250000, 250000), 0);
@@ -136,6 +143,9 @@ function calculateTax(taxableIncome, old = false) {
 
     return  (slab1Tax + slab2Tax  + slab3Tax  + slab4Tax)
   } else {
+    if(taxableIncome < TAX_REBATE['new']) {
+      taxableIncome = 0
+    }
     slab1Income = Math.min(taxableIncome, 300000);
     slab1Tax = 0;
     slab2Income = Math.max(Math.min(taxableIncome-300000, 300000), 0);
