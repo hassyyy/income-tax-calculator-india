@@ -25,7 +25,7 @@ function displayResult() {
   exemptions = exemptions_80c + otherExemptions;
 
   oldTaxableIncome = income - hra - exemptions - EMPLOYER_PF - PROFESSIONAL_TAX - STANDARD_EXEMPTION;
-  newTaxableIncome = income - EMPLOYER_PF;
+  newTaxableIncome = income - EMPLOYER_PF - STANDARD_EXEMPTION;
 
   // Taxable Income
   $('#old-taxable-income-annual').text(formatCurrency(oldTaxableIncome));
@@ -54,6 +54,8 @@ function displayResult() {
   $('#nr-total-income-monthly').text(formatCurrencyMonthly(income));
   $('#nr-employer-pf-annual').text(formatCurrency(EMPLOYER_PF));
   $('#nr-employer-pf-monthly').text(formatCurrencyMonthly(EMPLOYER_PF));
+  $('#nr-standard-exemption-annual').text(formatCurrency(STANDARD_EXEMPTION));
+  $('#nr-standard-exemption-monthly').text(formatCurrencyMonthly(STANDARD_EXEMPTION));
 
   oldTax = calculateTax(oldTaxableIncome, true);
   newTax = calculateTax(newTaxableIncome);
