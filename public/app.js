@@ -141,7 +141,7 @@ function calculateTax(taxableIncome, old = false) {
     $('#or-slab-4-income').text(formatCurrency(slab4Income));
     $('#or-slab-4-tax').text(formatCurrency(slab4Tax));
 
-    return  (slab1Tax + slab2Tax  + slab3Tax  + slab4Tax)
+    return (slab1Tax + slab2Tax + slab3Tax + slab4Tax)
   } else {
     if(taxableIncome < TAX_REBATE['new']) {
       taxableIncome = 0
@@ -172,7 +172,7 @@ function calculateTax(taxableIncome, old = false) {
     $('#nr-slab-6-income').text(formatCurrency(slab6Income));
     $('#nr-slab-6-tax').text(formatCurrency(slab6Tax));
 
-    return  (slab1Tax + slab2Tax  + slab3Tax  + slab4Tax  + slab5Tax  + slab6Tax)
+    return (slab1Tax + slab2Tax + slab3Tax + slab4Tax + slab5Tax + slab6Tax)
   }
 }
 
