@@ -136,20 +136,18 @@ function calculateTax(taxableIncome, old = false) {
 
     return  (slab1Tax + slab2Tax  + slab3Tax  + slab4Tax)
   } else {
-    slab1Income = Math.min(taxableIncome, 250000);
+    slab1Income = Math.min(taxableIncome, 300000);
     slab1Tax = 0;
-    slab2Income = Math.max(Math.min(taxableIncome-250000, 250000), 0);
+    slab2Income = Math.max(Math.min(taxableIncome-300000, 300000), 0);
     slab2Tax = slab2Income * 0.05;
-    slab3Income = Math.max(Math.min(taxableIncome-500000, 250000), 0);
+    slab3Income = Math.max(Math.min(taxableIncome-600000, 300000), 0);
     slab3Tax = slab3Income * 0.10;
-    slab4Income = Math.max(Math.min(taxableIncome-750000, 250000), 0);
+    slab4Income = Math.max(Math.min(taxableIncome-900000, 300000), 0);
     slab4Tax = slab4Income * 0.15;
-    slab5Income = Math.max(Math.min(taxableIncome-1000000, 250000), 0);
+    slab5Income = Math.max(Math.min(taxableIncome-1200000, 300000), 0);
     slab5Tax = slab5Income * 0.20;
-    slab6Income = Math.max(Math.min(taxableIncome-1250000, 250000), 0);
-    slab6Tax = slab6Income * 0.25;
-    slab7Income = Math.max(taxableIncome-1500000, 0);
-    slab7Tax = slab7Income * 0.30;
+    slab6Income = Math.max(taxableIncome-1500000, 0);
+    slab6Tax = slab6Income * 0.30;
 
     $('#nr-slab-1-income').text(formatCurrency(slab1Income));
     $('#nr-slab-1-tax').text(formatCurrency(slab1Tax));
@@ -163,10 +161,8 @@ function calculateTax(taxableIncome, old = false) {
     $('#nr-slab-5-tax').text(formatCurrency(slab5Tax));
     $('#nr-slab-6-income').text(formatCurrency(slab6Income));
     $('#nr-slab-6-tax').text(formatCurrency(slab6Tax));
-    $('#nr-slab-7-income').text(formatCurrency(slab7Income));
-    $('#nr-slab-7-tax').text(formatCurrency(slab7Tax));
 
-    return  (slab1Tax + slab2Tax  + slab3Tax  + slab4Tax  + slab5Tax  + slab6Tax  + slab7Tax)
+    return  (slab1Tax + slab2Tax  + slab3Tax  + slab4Tax  + slab5Tax  + slab6Tax)
   }
 }
 
