@@ -1,4 +1,4 @@
-console.log("App JS");
+console.log("Welcome to Income Tax Calculator - India!");
 
 EMPLOYER_PF = 21600;
 PROFESSIONAL_TAX = 2500;
@@ -21,7 +21,6 @@ CURRENCY_OPTIONS = {
 AutoNumeric.multiple(inputElements, CURRENCY_OPTIONS);
 
 function displayResult() {
-  console.log('Calculating Tax');
   $('#result').css('visibility','visible');
   $('#result-table').css('visibility','visible');
 
