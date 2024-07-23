@@ -2,7 +2,11 @@ console.log("App JS");
 
 EMPLOYER_PF = 21600;
 PROFESSIONAL_TAX = 2500;
-STANDARD_EXEMPTION = 50000;
+STANDARD_EXEMPTION = {
+  old: 50000,
+  new: 75000
+}
+
 TAX_REBATE = {
   old: 500000,
   new: 700000
@@ -28,8 +32,8 @@ function displayResult() {
   exemptions_80c = Math.min(150000, AutoNumeric.getNumber('#exemptions-80c') + pf);
   exemptions = exemptions_80c + otherExemptions;
 
-  oldTaxableIncome = income - hra - exemptions - EMPLOYER_PF - PROFESSIONAL_TAX - STANDARD_EXEMPTION;
-  newTaxableIncome = income - EMPLOYER_PF - STANDARD_EXEMPTION;
+  oldTaxableIncome = income - hra - exemptions - EMPLOYER_PF - PROFESSIONAL_TAX - STANDARD_EXEMPTION['old'];
+  newTaxableIncome = income - EMPLOYER_PF - STANDARD_EXEMPTION['new'];
 
   // Taxable Income
   $('#old-taxable-income-annual').text(formatCurrency(oldTaxableIncome));
@@ -46,8 +50,8 @@ function displayResult() {
   $('#hra-monthly').text(formatCurrencyMonthly(hra));
   $('#exemptions-80c-annual').text(formatCurrency(exemptions_80c));
   $('#exemptions-80c-monthly').text(formatCurrencyMonthly(exemptions_80c));
-  $('#standard-exemption-annual').text(formatCurrency(STANDARD_EXEMPTION));
-  $('#standard-exemption-monthly').text(formatCurrencyMonthly(STANDARD_EXEMPTION));
+  $('#standard-exemption-annual').text(formatCurrency(STANDARD_EXEMPTION['old']));
+  $('#standard-exemption-monthly').text(formatCurrencyMonthly(STANDARD_EXEMPTION['old']));
   $('#other-exemptions-annual').text(formatCurrency(otherExemptions));
   $('#other-exemptions-monthly').text(formatCurrencyMonthly(otherExemptions));
   $('#professional-tax-annual').text(formatCurrency(PROFESSIONAL_TAX));
@@ -58,8 +62,8 @@ function displayResult() {
   $('#nr-total-income-monthly').text(formatCurrencyMonthly(income));
   $('#nr-employer-pf-annual').text(formatCurrency(EMPLOYER_PF));
   $('#nr-employer-pf-monthly').text(formatCurrencyMonthly(EMPLOYER_PF));
-  $('#nr-standard-exemption-annual').text(formatCurrency(STANDARD_EXEMPTION));
-  $('#nr-standard-exemption-monthly').text(formatCurrencyMonthly(STANDARD_EXEMPTION));
+  $('#nr-standard-exemption-annual').text(formatCurrency(STANDARD_EXEMPTION['new']));
+  $('#nr-standard-exemption-monthly').text(formatCurrencyMonthly(STANDARD_EXEMPTION['new']));
 
   oldTax = calculateTax(oldTaxableIncome, true);
   newTax = calculateTax(newTaxableIncome);
@@ -148,11 +152,11 @@ function calculateTax(taxableIncome, old = false) {
     }
     slab1Income = Math.min(taxableIncome, 300000);
     slab1Tax = 0;
-    slab2Income = Math.max(Math.min(taxableIncome-300000, 300000), 0);
+    slab2Income = Math.max(Math.min(taxableIncome-300000, 400000), 0);
     slab2Tax = slab2Income * 0.05;
-    slab3Income = Math.max(Math.min(taxableIncome-600000, 300000), 0);
+    slab3Income = Math.max(Math.min(taxableIncome-700000, 300000), 0);
     slab3Tax = slab3Income * 0.10;
-    slab4Income = Math.max(Math.min(taxableIncome-900000, 300000), 0);
+    slab4Income = Math.max(Math.min(taxableIncome-1000000, 200000), 0);
     slab4Tax = slab4Income * 0.15;
     slab5Income = Math.max(Math.min(taxableIncome-1200000, 300000), 0);
     slab5Tax = slab5Income * 0.20;
