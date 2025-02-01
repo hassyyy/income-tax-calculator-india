@@ -162,7 +162,7 @@ function calculateTax(taxableIncome, old = false) {
     slab6Income = Math.max(Math.min(taxableIncome-2000000, 400000), 0);
     slab6Tax = slab6Income * 0.25;
     slab7Income = Math.max(taxableIncome-2400000, 0);
-    slab7Tax = slab6Income * 0.30;
+    slab7Tax = slab7Income * 0.30;
 
     $('#nr-slab-1-income').text(formatCurrency(slab1Income));
     $('#nr-slab-1-tax').text(formatCurrency(slab1Tax));
