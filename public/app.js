@@ -177,7 +177,7 @@ function calculateTax(taxableIncome, old = false) {
     $('#nr-slab-6-income').text(formatCurrency(slab6Income));
     $('#nr-slab-6-tax').text(formatCurrency(slab6Tax));
     $('#nr-slab-7-income').text(formatCurrency(slab7Income));
-    $('#nr-slab-67tax').text(formatCurrency(slab7Tax));
+    $('#nr-slab-7-tax').text(formatCurrency(slab7Tax));
 
     return (slab1Tax + slab2Tax + slab3Tax + slab4Tax + slab5Tax + slab6Tax + slab7Tax)
   }
